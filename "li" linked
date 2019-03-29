@@ -1,0 +1,21 @@
+// hello and thanks for this work (i am not a programmer .... but )
+
+// in "SevenSegmentTM1637.cpp" at line 101 i propose to add 
+TM1637_CHAR_li // 127 "li" linked
+
+// in "SevenSegmentTM1637.h" at line 398 i propose to add 
+#define TM1637_CHAR_li          B00110100 // 127 "li" linked
+
+// in "SerialPrint.ino" at line 74 i propose to add 
+if (i>0)											// adding Xav-1er 
+			{
+			if ((serialBuffer[i-1]=='l') && (c=='i'))   //replacing 2 letters "li" with a letter "li" linked
+			{
+				serialBuffer[i-1] = 127; // "li" linked
+				return false;
+			}
+			}
+      
+// so, 
+// on 3 digits we can write "lion" very clearly 
+// and 4 digits we can write "blind" and very clearly too ;-)
